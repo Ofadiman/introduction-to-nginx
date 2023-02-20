@@ -9,3 +9,4 @@ services:
       - ./images/:/www/images/
     ports:
       - 3000:80
+      - 3001:81

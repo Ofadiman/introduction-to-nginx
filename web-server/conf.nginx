@@ -8,5 +8,14 @@ server {
 
     location / {
         root /www/html/;
+        index one.html;
+    }
+}
+
+server {
+    listen 81;
+
+    location / {
+        proxy_pass http://localhost:80;
     }
 }
