@@ -3,6 +3,7 @@ server {
 
     location /images/ {
         root /www/;
+        add_header Cache-Control "public, max-age=10";
     }
 
     location / {
