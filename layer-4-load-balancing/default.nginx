@@ -1,0 +1,13 @@
+stream {
+    upstream nodejs {
+        server node_one:3000;
+        server node_two:3000;
+    }
+
+    server {
+        listen 80;
+        proxy_pass nodejs;
+    }
+}
+
+events {}
