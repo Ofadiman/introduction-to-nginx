@@ -1,6 +1,10 @@
 server {
     listen 80;
 
+    location /images/ {
+        root /www/;
+    }
+
     location / {
         root /www/html/;
     }
