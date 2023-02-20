@@ -17,13 +17,11 @@ services:
   node_one:
     image: node:18.14.1-bullseye-slim
     working_dir: /home/node/app
-    container_name: node_one
     volumes:
       - ./:/home/node/app
     command: npm run start
   node_two:
     image: node:18.14.1-bullseye-slim
-    container_name: node_two
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
