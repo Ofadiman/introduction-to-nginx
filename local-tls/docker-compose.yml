@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:1.23.3-alpine
+    volumes:
+      - ./default.nginx:/etc/nginx/nginx.conf
+      - ./self-signed.crt:/etc/nginx/tls/self-signed.crt
+      - ./self-signed.key:/etc/nginx/tls/self-signed.key
+      - ./index.html:/www/html/index.html
+    ports:
+      - 3000:443
+      - 3001:80
