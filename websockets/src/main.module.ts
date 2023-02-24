@@ -25,7 +25,7 @@ class EventsGateway {
     @ConnectedSocket() client: Socket,
   ) {
     this.logger.log(messageBody);
-    return messageBody;
+    client.emit('channel_1', { msg: process.env.MESSAGE });
   }
 }
 
