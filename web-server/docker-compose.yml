@@ -4,7 +4,7 @@ services:
   web_server:
     image: nginx:1.23.3-alpine
     volumes:
-      - ./conf.nginx:/etc/nginx/conf.d/default.conf
+      - ./default.nginx:/etc/nginx/nginx.conf
       - ./html/:/www/html/
       - ./images/:/www/images/
     ports:

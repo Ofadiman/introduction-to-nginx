@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx:1.23.3-alpine
     volumes:
-      - ./l4.nginx:/etc/nginx/nginx.conf
+      - ./default.l4.nginx:/etc/nginx/nginx.conf
     ports:
       - 3000:80
 

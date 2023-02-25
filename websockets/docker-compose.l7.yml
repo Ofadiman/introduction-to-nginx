@@ -5,7 +5,7 @@ services:
     image: nginx:1.23.3-alpine
     volumes:
       - ./html/:/www/html/
-      - ./l7.nginx:/etc/nginx/nginx.conf
+      - ./default.l7.nginx:/etc/nginx/nginx.conf
     ports:
       - 3000:80
 
