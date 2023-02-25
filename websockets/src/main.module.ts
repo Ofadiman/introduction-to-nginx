@@ -9,6 +9,7 @@ import {
 import { Server, Socket } from 'socket.io';
 
 @WebSocketGateway({
+  // path: `/ws`,
   cors: {
     origin: '*',
   },

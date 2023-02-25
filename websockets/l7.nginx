@@ -1,0 +1,25 @@
+http {
+    upstream nodejs {
+        server node_one:3000;
+        server node_two:3000;
+    }
+
+    server {
+        listen 80;
+
+        location /socket.io {
+            proxy_pass http://nodejs;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "Upgrade";
+            proxy_set_header Host $host;
+        }
+
+        location / {
+            root /www/html/;
+            index one.html;
+        }
+    }
+}
+
+events {}

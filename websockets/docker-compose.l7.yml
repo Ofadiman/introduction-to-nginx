@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:1.23.3-alpine
+    volumes:
+      - ./html/:/www/html/
+      - ./l7.nginx:/etc/nginx/nginx.conf
+    ports:
+      - 3000:80
+
+  node_one:
+    image: node:18.14.1-bullseye-slim
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    command: npm run start
+    environment:
+      MESSAGE: one
+
+  node_two:
+    image: node:18.14.1-bullseye-slim
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    command: npm run start
+    environment:
+      MESSAGE: two
